@@ -1,3 +1,5 @@
+/* General */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +12,8 @@ body {
     width: 100%;
     background-color: #d5e1f4;
 }
+
+/* navbar */
 
 a {
     text-decoration: none;
@@ -45,10 +49,9 @@ nav li {
 
 nav li a {
     position: relative;
-    transform: translate(-50%, -50%);
     top: 50%;
+    transform: translate(-50%);
 }
-
 
 
 
@@ -56,19 +59,19 @@ nav li a {
 
 .board_box {
     position: relative;
-    top: 10vh;
+    top: 7vh;
     left: 50%;
     transform: translate(-50%);
     width: 720px;
 }
 
-#hoverRow {
+#hover_row {
     position: relative;
     display: inline-flex;
     width: 100%;
 }
 
-.hoverToken {
+.hover_token {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -90,6 +93,25 @@ nav li a {
     height: 80px;
     border: 1px solid black;
     position: relative;
+}
+
+.winning {
+    animation: winning 1s linear infinite;
+}
+
+@keyframes winning {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.07);
+    }
+
+    100% {
+        opacity: 0.5;
+    }
 }
 
 .token {
@@ -114,7 +136,11 @@ nav li a {
     visibility: hidden;
 }
 
-#restartButton {
+.cell:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#restart_button {
     position: relative;
     transform: translateX(-50%);
     font-size: 18px;
