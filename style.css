@@ -42,3 +42,84 @@ nav li {
     height: 100%;
     text-align: center;
 }
+
+nav li a {
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+
+
+
+/* 4 in a row */
+
+.board_box {
+    position: relative;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    width: 720px;
+}
+
+#hoverRow {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+}
+
+.hoverToken {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#board {
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.token {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: top 0.5s;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#restartButton {
+    position: relative;
+    transform: translateX(-50%);
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    left: 50%;
+}
