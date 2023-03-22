@@ -1,4 +1,9 @@
 /* General */
+:root {
+    --main_color: #4378ce;
+    --accent_color: #d5e1f4;
+    --hover_color: #5a9ef5;
+}
 
 * {
     box-sizing: border-box;
@@ -10,7 +15,7 @@
 body {
     height: 100%;
     width: 100%;
-    background-color: #d5e1f4;
+    background-color: var(--accent_color);
 }
 
 /* navbar */
@@ -29,7 +34,7 @@ nav {
     justify-content: space-between;
     align-items: center;
 
-    background-color: #4378ce;
+    background-color: var(--main_color);
     height: 70px;
     width: 100%;
     position: fixed;
@@ -44,25 +49,71 @@ nav li {
     border: #000 solid 0.5px;
     width: calc(100% / 3);
     height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav li button {
+    background-color: var(--main_color);
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--hover_color);
+}
+
+
+/* Game layout */
+.games-container {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 4vw;
+    width: 95%;
+    max-width: 1200px;
+}
+
+.game {
+    background-color: var(--main_color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-nav li a {
-    position: relative;
-    top: 50%;
-    transform: translate(-50%);
+.game h2 {
+    margin-bottom: 10px;
+}
+
+.game:hover {
+    background-color: #5a9ef5;
+    cursor: pointer;
 }
 
 
-
-/* 4 in a row */
+/* connect four */
 
 .board_box {
     position: relative;
     top: 7vh;
     left: 50%;
     transform: translate(-50%);
-    width: 720px;
+    width: 724px;
 }
 
 #hover_row {
@@ -86,6 +137,7 @@ nav li a {
     display: inline-flex;
     flex-wrap: wrap;
     width: 100%;
+    border: #000 solid 2px;
 }
 
 .cell {
@@ -137,7 +189,7 @@ nav li a {
 }
 
 .cell:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--hover_color);
 }
 
 #restart_button {
@@ -148,4 +200,46 @@ nav li a {
     margin-top: 20px;
     cursor: pointer;
     left: 50%;
+    background-color: var(--main_color);
+    border: #000 solid 0.5px;
+    border-radius: 10px;
+}
+
+#restart_button:hover {
+    background-color: var(--hover_color);
+}
+
+
+/* Rock Paper Scissors */
+
+.game-container {
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.choice-container {
+    margin-bottom: 20px;
+}
+
+.choice {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: 2px solid #000;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.choice img {
+    transform: scale(3);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.choice:hover {
+    background-color: var(--hover_color);
 }
