@@ -11,21 +11,21 @@
 
 <body>
     <nav>
-        <li><button onclick="home()">Home</button></li>
-        <li><button onclick="about()">About</button></li>
-        <li><button onclick="contact()">Contact</button></li>
+        <li><button onclick="update_site_location('index.html')">Home</button></li>
+        <li><button onclick="update_site_location('pages/about.html')">About</button></li>
+        <li><button onclick="update_site_location('pages/contact.html')">Contact</button></li>
     </nav>
 
     <section class="games-container">
-        <button class="game" onclick="connect_four()">
+        <button class="game" onclick="update_site_location('pages/connect_four.html')">
             <h2>Connect Four</h2>
             <p>Description of game 1</p>
         </button>
-        <button class="game" onclick="rock_paper_scissors()">
+        <button class="game" onclick="update_site_location('pages/rock_paper_scissors.html')">
             <h2>Rock Paper Scissors</h2>
             <p>Description of game 2</p>
         </button>
-        <button class="game" onclick="sudoku()">
+        <button class="game" onclick="update_site_location('pages/sudoku.html')">
             <h2>Sudoku</h2>
             <p>Description of game 3</p>
         </button>
