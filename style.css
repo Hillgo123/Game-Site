@@ -138,6 +138,7 @@ button:hover {
     flex-wrap: wrap;
     width: 100%;
     border: #000 solid 2px;
+    border-top: none;
 }
 
 .cell {
@@ -242,4 +243,43 @@ button:hover {
 
 .choice:hover {
     background-color: var(--hover_color);
+}
+
+
+/* Sudoku */
+
+.sudoku_container {
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 50%;
+    border: 1px solid #000;
+    width: calc(60px * 9 + 2px);
+}
+
+.sudoku_board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cell_ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+
+    border: 1px solid #000;
+}
+
+.cell_:hover {
+    background-color: var(--hover_color);
+}
+
+.selected {
+    background-color: var(--accent_color);
 }

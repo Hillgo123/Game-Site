@@ -29,3 +29,7 @@ const connect_four = () => {
 const rock_paper_scissors = () => {
     location.href = "../pages/rock_paper_scissors.html";
 }
+
+const sudoku = () => {
+    location.href = "../pages/sudoku.html";
+}
