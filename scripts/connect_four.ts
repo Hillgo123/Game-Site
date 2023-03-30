@@ -1,7 +1,6 @@
 const rows = 8;
 const columns = 9;
 const board = document.getElementById("board");
-const cell_size = 80;
 let current_player = "red";
 let game_matrix = [];
 
@@ -36,9 +35,8 @@ function create_board() {
 
 function handle_click(column: number) {
     // Check if the game is over. If yes, do nothing.
-    if (game_over) {
-        return;
-    };
+    if (game_over)
+        return
 
     // Find the first empty cell in the selected column.
     let target_row = find_first_empty_cell(column);
@@ -55,6 +53,11 @@ function handle_click(column: number) {
             // If yes, display an alert with the winner, and stop the game.
             setTimeout(() => {
                 alert(current_player.toUpperCase() + " wins!");
+                // change the hover coller of the cell
+                document.querySelectorAll(".cell").forEach((cell) => {
+                    cell.classList.add("no_hover");
+                });
+
                 game_over = true;
             }, 25);
         } else {
@@ -76,7 +79,7 @@ function find_first_empty_cell(column: number) {
         }
     }
     // If the column is full, return -1.
-    return -1;
+    return -1
 }
 
 function check_victory(row: number, column: number) {
@@ -173,9 +176,9 @@ function update_hover_tokens() {
 }
 function handle_mouse_over(column: number) {
     // Show the hover token divs for the column of the mouseover
-    if (game_over) {
+    if (game_over)
         return
-    };
+
     hover_row.children[column].classList.remove("hidden");
 }
 
@@ -191,6 +194,9 @@ function reset_board() {
             game_matrix[i][j].classList.remove("red", "yellow", "hidden", "winning");
         }
     }
+    document.querySelectorAll(".cell").forEach((cell) => {
+        cell.classList.remove("no_hover");
+    });
     //reset the rest of the variables
     current_player = "red";
     game_over = false;

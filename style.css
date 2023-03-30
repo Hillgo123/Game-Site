@@ -3,6 +3,10 @@
     --main_color: #4378ce;
     --accent_color: #d5e1f4;
     --hover_color: #5a9ef5;
+
+    --connect_four_board_size: calc(60vw + 4px);
+    --conncect_four_cell_size: calc((var(--connect_four_board_size) - 4px) / 9);
+    --conncect_four_max_cell_size: 80px;
 }
 
 * {
@@ -113,7 +117,8 @@ button:hover {
     top: 7vh;
     left: 50%;
     transform: translate(-50%);
-    width: 724px;
+    width: var(--connect_four_board_size);
+    max-width: 724px;
 }
 
 #hover_row {
@@ -123,8 +128,10 @@ button:hover {
 }
 
 .hover_token {
-    width: 70px;
-    height: 70px;
+    width: calc(var(--conncect_four_cell_size) - 10px);
+    height: calc(var(--conncect_four_cell_size) - 10px);
+    max-width: calc(var(--conncect_four_max_cell_size) - 10px);
+    max-height: calc(var(--conncect_four_max_cell_size) - 10px);
     border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;
@@ -142,10 +149,16 @@ button:hover {
 }
 
 .cell {
-    width: 80px;
-    height: 80px;
+    width: var(--conncect_four_cell_size);
+    height: var(--conncect_four_cell_size);
+    max-width: var(--conncect_four_max_cell_size);
+    max-height: var(--conncect_four_max_cell_size);
     border: 1px solid black;
     position: relative;
+}
+
+.cell:not(.no_hover):hover {
+    background-color: var(--hover_color);
 }
 
 .winning {
@@ -168,8 +181,10 @@ button:hover {
 }
 
 .token {
-    width: 70px;
-    height: 70px;
+    width: calc(var(--conncect_four_cell_size) - 10px);
+    height: calc(var(--conncect_four_cell_size) - 10px);
+    max-width: calc(var(--conncect_four_max_cell_size) - 10px);
+    max-height: calc(var(--conncect_four_max_cell_size) - 10px);
     border-radius: 50%;
     position: absolute;
     top: 5px;
@@ -187,10 +202,6 @@ button:hover {
 
 .hidden {
     visibility: hidden;
-}
-
-.cell:hover {
-    background-color: var(--hover_color);
 }
 
 #restart_button {
@@ -253,8 +264,8 @@ button:hover {
     transform: translate(-50%, -50%);
     top: 50vh;
     left: 50%;
-    border: 1px solid #000;
-    width: calc(60px * 9 + 2px);
+    border: 3px solid #000;
+    width: calc(60px * 9 + 6px);
 }
 
 .sudoku_board {
@@ -263,7 +274,7 @@ button:hover {
     justify-content: center;
 }
 
-.cell_ {
+.s_cell {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,7 +287,17 @@ button:hover {
     border: 1px solid #000;
 }
 
-.cell_:hover {
+.s_cell[data-col="6"],
+.s_cell[data-col="3"] {
+    border-left: 3px solid #000;
+}
+
+.s_cell[data-row="2"],
+.s_cell[data-row="5"] {
+    border-bottom: 3px solid #000;
+}
+
+.s_cell:hover {
     background-color: var(--hover_color);
 }
 
