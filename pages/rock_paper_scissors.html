@@ -17,16 +17,22 @@
     </nav>
 
     <h1>Rock Paper Scissors</h1>
-    <div class="game-container">
-        <div class="choice-container">
-            <button class="choice" onclick="play('rock')"><img src="../img/rock.png" alt=""></button>
-            <button class="choice" onclick="play('paper')">Paper</button>
-            <button class="choice" onclick="play('scissors')">Scissors</button>
+    <main class="rps">
+        <div class="game-container">
+            <div class="choice-container">
+                <button class="choice" onclick="play('rock')"><img src="../img/rock.png" alt=""></button>
+                <button class="choice" onclick="play('paper')"><img src="../img/paper.png" alt=""></button>
+                <button class="choice" onclick="play('scissors')"><img src="../img/scissors.png" alt=""></button>
+            </div>
+            <div class="choice-container">
+                <button class="choice bot"><img id="rock" src="../img/rock.png" alt=""></button>
+                <button class="choice bot"><img id="paper" src="../img/paper.png" alt=""></button>
+                <button class="choice bot"><img id="scissors" src="../img/scissors.png" alt=""></button>
+            </div>
         </div>
-        <p id="result"></p>
-        <button onclick="reset()">Restart</button>
-    </div>
-
+        <p id="result">You - 0 : Computor - 0</p>
+        <button id="restart_button" onclick="reset()">Restart</button>
+    </main>
     <script src="../scripts/rock_paper_scissors.js"></script>
     <script src="../scripts/index.js"></script>
 </body>

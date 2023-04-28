@@ -1,28 +1,45 @@
-let playerScore = 0;
-let computerScore = 0;
+let player_score = 0;
+let computer_score = 0;
 const result = document.getElementById('result');
-function play(userChoice) {
+function play(user_choice) {
     const choices = ['rock', 'paper', 'scissors'];
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    if (playerScore < 3 && computerScore < 3) {
-        if (userChoice === computerChoice) {
-            result.textContent = `It's a tie! Score: You - ${playerScore}, Computer - ${computerScore}`;
+    const computer_choice = choices[Math.floor(Math.random() * choices.length)];
+    if (computer_choice === 'rock') {
+        document.getElementById('rock').classList.remove('hidden');
+        document.getElementById('paper').classList.add('hidden');
+        document.getElementById('scissors').classList.add('hidden');
+    }
+    if (computer_choice === 'paper') {
+        document.getElementById('paper').classList.remove('hidden');
+        document.getElementById('rock').classList.add('hidden');
+        document.getElementById('scissors').classList.add('hidden');
+    }
+    if (computer_choice === 'scissors') {
+        document.getElementById('scissors').classList.remove('hidden');
+        document.getElementById('rock').classList.add('hidden');
+        document.getElementById('paper').classList.add('hidden');
+    }
+    if (player_score < 3 && computer_score < 3) {
+        if (user_choice === computer_choice) {
+            result.textContent = `You - ${player_score} : Computer - ${computer_score}`;
         }
-        else if ((userChoice === 'rock' && computerChoice === 'scissors') ||
-            (userChoice === 'paper' && computerChoice === 'rock') ||
-            (userChoice === 'scissors' && computerChoice === 'paper')) {
-            playerScore++;
-            result.textContent = `You win this round! ${userChoice} beats ${computerChoice}. Score: You - ${playerScore}, Computer - ${computerScore}`;
+        else if ((user_choice === 'rock' && computer_choice === 'scissors') ||
+            (user_choice === 'paper' && computer_choice === 'rock') ||
+            (user_choice === 'scissors' && computer_choice === 'paper')) {
+            player_score++;
+            result.textContent = `You - ${player_score} : Computer - ${computer_score}`;
         }
         else {
-            computerScore++;
-            result.textContent = `You lose this round! ${computerChoice} beats ${userChoice}. Score: You - ${playerScore}, Computer - ${computerScore}`;
+            computer_score++;
+            result.textContent = `You - ${player_score} : Computer - ${computer_score}`;
         }
-        if (playerScore === 3) {
-            result.textContent += " Congratulations! You won the game.";
+        if (player_score === 3) {
+            result.textContent = `You - ${player_score} : Computer - ${computer_score}`;
+            setTimeout(() => alert('You won!'), 25);
         }
-        else if (computerScore === 3) {
-            result.textContent += " Sorry, computer won the game.";
+        else if (computer_score === 3) {
+            result.textContent = `You - ${player_score} : Computer - ${computer_score}`;
+            setTimeout(() => alert('You lost!'), 25);
         }
     }
     else {
@@ -30,7 +47,7 @@ function play(userChoice) {
     }
 }
 function reset() {
-    playerScore = 0;
-    computerScore = 0;
-    result.textContent = "Score: You - 0, Computer - 0";
+    player_score = 0;
+    computer_score = 0;
+    result.textContent = "You - 0 : Computer - 0";
 }
