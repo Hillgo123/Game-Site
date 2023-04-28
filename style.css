@@ -304,3 +304,25 @@ button:hover {
 .selected {
     background-color: var(--accent_color);
 }
+
+.new_board_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(60px * 9 + 6px);
+    top: 21vh;
+}
+
+.new_board_container #restart_button {
+    margin: 10px;
+    left: 0;
+    transform: none;
+}
+
+.player_input {
+    color: rgb(56, 56, 56);
+    font-weight: lighter;
+}

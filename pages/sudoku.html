@@ -21,9 +21,17 @@
             <div class="sudoku_board">
             </div>
         </div>
-        <button onclick="load_puzzle('easy');">
-            <h2>Generate New Board</h2>
-        </button>
+        <div class="new_board_container">
+            <button onclick="load_puzzle('easy');" id="restart_button">
+                <h2>Generate Easy <br>Board</h2>
+            </button>
+            <button onclick="load_puzzle('medium');" id="restart_button">
+                <h2>Generate Medium <br>Board</h2>
+            </button>
+            <button onclick="load_puzzle('hard');" id="restart_button">
+                <h2>Generate Hard <br>Board</h2>
+            </button>
+        </div>
     </main>
 
     <script src="../scripts/sudoku.js"></script>
