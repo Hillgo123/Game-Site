@@ -10,11 +10,46 @@
 </head>
 
 <body>
-    <nav>
-        <li><button onclick="update_site_location('../index.html')">Home</button></li>
-        <li><button onclick="update_site_location('about.html')">About</button></li>
-        <li><button onclick="update_site_location('contact.html')">Contact</button></li>
+    <nav class="fixed-nav-bar">
+        <a href="../index.html">
+            <div class="logo"><span>Retro</span>Collection</div>
+        </a>
+        <input type="checkbox" id="menuButton" />
+        <label for="menuButton" class="menu-button-label">
+            <div class="white-bar"></div>
+            <div class="white-bar"></div>
+            <div class="white-bar"></div>
+            <div class="white-bar"></div>
+        </label>
     </nav>
+
+    <div class="the-bass">
+        <div class="rela-block drop-down-container">
+            <div class="drop-down-item">
+                <button onclick="update_site_location('about.html')">About</button>
+            </div>
+        </div>
+        <div class="rela-block drop-down-container">
+            <div class="drop-down-item">
+                <button onclick="update_site_location('contact.html')">Contact</button>
+            </div>
+        </div>
+        <div class="rela-block drop-down-container">
+            <div class="drop-down-item">
+                <button onclick="update_site_location('connect_four.html')">Connect Four</button>
+            </div>
+        </div>
+        <div class="rela-block drop-down-container">
+            <div class="drop-down-item">
+                <button onclick="update_site_location('rock_paper_scissors.html')">Rock Paper Scissors</button>
+            </div>
+        </div>
+        <div class="rela-block drop-down-container">
+            <div class="drop-down-item">
+                <button onclick="update_site_location('sudoku.html')">Sudoku</button>
+            </div>
+        </div>
+    </div>
 
     <script src="../scripts/index.js"></script>
 </body>
