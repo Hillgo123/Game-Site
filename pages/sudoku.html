@@ -14,6 +14,7 @@
         <a href="../index.html">
             <div class="logo"><span>Retro</span>Collection</div>
         </a>
+        <button class="modal_btn">Game Explanation</button>
         <input type="checkbox" id="menuButton" />
         <label for="menuButton" class="menu-button-label">
             <div class="white-bar"></div>
@@ -68,6 +69,29 @@
             </button>
         </div>
     </main>
+
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sudoku</h2>
+            <p>
+                Sudoku is a 9x9 grid puzzle game where the objective is to fill in the grid with the numbers 1-9 in such
+                a way that each row, column, and 3x3 square contains each number exactly once, without any repetitions.
+                The grid starts with some initial numbers already filled in, and the player's task is to use logic and
+                deduction to determine which numbers belong in the remaining empty cells.
+            </p>
+            <h3>Rules:</h3>
+            <ul>
+                <li>Each row must contain the numbers 1-9 exactly once each</li>
+                <li>Each column must contain the numbers 1-9 exactly once each</li>
+                <li>Each 3x3 square must contain the numbers 1-9 exactly once each</li>
+            </ul>
+            <p>To solve a Sudoku puzzle, players typically use the process of elimination and deductive reasoning. This
+                involves scanning the grid for missing numbers, identifying patterns, and working backwards to determine
+                which numbers can be placed in each cell. As the difficulty of the puzzle increases, players may need to
+                rely more on their logical thinking and problem-solving skills to reach the correct solution.</p>
+        </div>
+    </div>
 
     <script src="../scripts/sudoku.js"></script>
     <script src="../scripts/index.js"></script>

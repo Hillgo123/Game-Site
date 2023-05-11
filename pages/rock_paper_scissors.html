@@ -14,6 +14,7 @@
         <a href="../index.html">
             <div class="logo"><span>Retro</span>Collection</div>
         </a>
+        <button class="modal_btn">Game Explanation</button>
         <input type="checkbox" id="menuButton" />
         <label for="menuButton" class="menu-button-label">
             <div class="white-bar"></div>
@@ -67,6 +68,32 @@
         <p id="result">You - 0 : Computor - 0</p>
         <button id="restart_button" onclick="reset()">Restart</button>
     </main>
+
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rock, Paper, Scissors</h2>
+            <p>
+                Rock, Paper, Scissors is a simple hand game usually played between two people, although in this game you
+                play against a bot. The game has only three possible outcomes other than a tie: a player who decides to
+                play rock will beat another player who has chosen scissors ("rock crushes scissors"), a play of paper
+                will beat a play of rock ("paper covers rock"), and a play of scissors will beat a play of paper
+                ("scissors cut paper").
+            </p>
+            <h3>Rules:</h3>
+            <ul>
+                <li>Each player chooses one of the three options: Rock, Paper, or Scissors.</li>
+                <li>Players reveal their choices simultaneously.</li>
+                <li>The winner is determined by the rules mentioned above:</li>
+                <ul>
+                    <li>Rock beats Scissors</li>
+                    <li>Scissors beat Paper</li>
+                    <li>Paper beats Rock</li>
+                </ul>
+                <li>If both players choose the same option, the game results in a tie.</li>
+            </ul>
+        </div>
+    </div>
     <script src="../scripts/rock_paper_scissors.js"></script>
     <script src="../scripts/index.js"></script>
 </body>

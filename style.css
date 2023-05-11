@@ -26,6 +26,10 @@ body {
 
 .fixed-nav-bar {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 30vw;
     top: 0;
     left: 0;
     right: 0;
@@ -39,10 +43,7 @@ body {
 }
 
 .fixed-nav-bar .logo {
-    position: absolute;
-    left: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+    text-decoration: none;
     text-transform: uppercase;
     color: #000000;
     font-size: 28px;
@@ -79,6 +80,7 @@ body {
     border-radius: 0;
     box-shadow: none;
     border-style: none;
+    border-radius: 5px 0px 0px 5px;
     cursor: pointer;
     background-color: var(--main_color);
 }
@@ -93,6 +95,7 @@ body {
     right: -8px;
     height: 100%;
     width: 8px;
+    border-radius: 0px 5px 5px 0px;
     transition: 0.25s ease;
     background: linear-gradient(to left, var(--main_color) 50%, #222 50%);
     background-size: 200% 100%;
@@ -214,6 +217,66 @@ body {
     right: 0;
 }
 
+/* Game Description */
+.modal_btn {
+    position: relative;
+    background-color: var(--main_color);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    cursor: pointer;
+    border: #000 solid 0.5px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.modal_btn:hover {
+    background-color: var(--hover_color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.modal-content ul {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.close {
+    position: relative;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: -5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    cursor: pointer;
+}
+
 
 /* Game layout */
 .games-container {
@@ -242,6 +305,9 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
 }
 
 .game h2 {
@@ -504,4 +570,26 @@ body {
 .player_input {
     color: rgb(56, 56, 56);
     font-weight: lighter;
+}
+
+
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container p {
+    margin: 100px 0;
 }
